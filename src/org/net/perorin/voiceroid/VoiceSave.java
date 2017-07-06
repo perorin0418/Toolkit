@@ -2,7 +2,7 @@ package org.net.perorin.voiceroid;
 
 import org.eclipse.swt.internal.win32.OS;
 import org.net.perorin.exception.HwndNotFoundException;
-import org.net.perorin.toolkit.RobotOperator;
+import org.net.perorin.toolkit.RobotUtils;
 import org.net.perorin.win32API.W32window;
 
 public class VoiceSave {
@@ -15,7 +15,7 @@ public class VoiceSave {
 					w = new W32window("音声ファイルの保存");
 					break;
 				} catch (HwndNotFoundException e) {
-					RobotOperator.wait(100);
+					RobotUtils.wait(100);
 				}
 			}
 

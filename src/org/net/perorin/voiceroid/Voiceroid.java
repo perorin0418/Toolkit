@@ -14,7 +14,7 @@ import java.util.Calendar;
 import org.eclipse.swt.internal.win32.OS;
 import org.net.perorin.exception.FailedVoiceSaveException;
 import org.net.perorin.exception.HwndNotFoundException;
-import org.net.perorin.toolkit.RobotOperator;
+import org.net.perorin.toolkit.RobotUtils;
 import org.net.perorin.win32API.Position;
 import org.net.perorin.win32API.Size;
 import org.net.perorin.win32API.W32window;
@@ -69,34 +69,34 @@ public class Voiceroid {
 		win.setWindowSize(new Size(442, 538));
 		Position wp = win.getWindowPos();
 
-		RobotOperator.wait(10);
+		RobotUtils.wait(10);
 
 		MouseLock.run();
 
 		MouseLock.setPos(new Point(VOICE_EFFECT.x + wp.getX(), VOICE_EFFECT.y + wp.getY()));
-		RobotOperator.clickLeft();
+		RobotUtils.clickLeft();
 
 		MouseLock.setPos(new Point(VOLUME.x + wp.getX(), VOLUME.y + wp.getY()));
-		RobotOperator.doubleClickLeft();
+		RobotUtils.doubleClickLeft();
 
-		RobotOperator.typeNum((double) volume / 100);
+		RobotUtils.typeNum((double) volume / 100);
 
 		MouseLock.setPos(new Point(SPEED.x + wp.getX(), SPEED.y + wp.getY()));
-		RobotOperator.doubleClickLeft();
+		RobotUtils.doubleClickLeft();
 
-		RobotOperator.typeNum((double) speed / 100);
+		RobotUtils.typeNum((double) speed / 100);
 
 		MouseLock.setPos(new Point(TONE.x + wp.getX(), TONE.y + wp.getY()));
-		RobotOperator.doubleClickLeft();
+		RobotUtils.doubleClickLeft();
 
-		RobotOperator.typeNum((double) tone / 100);
+		RobotUtils.typeNum((double) tone / 100);
 
 		MouseLock.setPos(new Point(TONE_SCALE.x + wp.getX(), TONE_SCALE.y + wp.getY()));
-		RobotOperator.doubleClickLeft();
+		RobotUtils.doubleClickLeft();
 
-		RobotOperator.typeNum((double) toneScale / 100);
+		RobotUtils.typeNum((double) toneScale / 100);
 
-		RobotOperator.enter();
+		RobotUtils.enter();
 
 		MouseLock.stop();
 
